@@ -15,12 +15,12 @@ function TaskList() {
     setTasks(newTasks);
   };
 
-  const updateTask = (taskId, newValue) => {
+  const updateTask = (todoId, newValue) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
 
-    setTasks(prev => prev.map(item => (item.id === taskId ? newValue : item)));
+    setTasks(prev => prev.map(item => (item.id === todoId ? newValue : item)));
   };
 
   const removeTask = id => {
