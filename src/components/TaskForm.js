@@ -50,7 +50,7 @@ function TaskForm(props) {
             ref={inputRef}
           />
           <button onClick={handleSubmit} className='task-button'>
-            Add todo
+            Add Task
           </button>
         </>
       )}
