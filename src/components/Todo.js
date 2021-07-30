@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import {ImBin} from 'react-icons/im';
-import {IoFlaskOutline} from 'react-icons/io';
+import {GiAtom} from 'react-icons/gi';
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -34,7 +34,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           onClick={() => removeTodo(todo.id)}
           className='delete-icon'
         />
-        <IoFlaskOutline
+        <GiAtom
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className='edit-icon'
         />
