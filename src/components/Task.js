@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TaskForm from './TaskForm';
-import {ImBin} from 'react-icons/im';
-import {GiAtom} from 'react-icons/gi';
+import {TiBackspaceOutline} from 'react-icons/ti';
+import {FiEdit3} from 'react-icons/fi';
 
 const Task = ({ tasks, completeTask, removeTask, updateTask }) => {
   const [edit, setEdit] = useState({
@@ -30,11 +30,11 @@ const Task = ({ tasks, completeTask, removeTask, updateTask }) => {
         {task.text}
       </div>
       <div className='icons'>
-        <ImBin
+        <TiBackspaceOutline
           onClick={() => removeTask(task.id)}
           className='delete-icon'
         />
-        <GiAtom
+        <FiEdit3
           onClick={() => setEdit({ id: task.id, value: task.text })}
           className='edit-icon'
         />
