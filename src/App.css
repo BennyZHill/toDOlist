@@ -17,7 +17,7 @@
    width: 100vw;
    font-family: 'Bebas Neue', cursive;
   }
-  .todo-app {
+  .task-app {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -50,11 +50,11 @@
     opacity: 0.4;
   }
   
-  .todo-form {
+  .task-form {
     margin-bottom: 32px;
   }
   
-  .todo-input {
+  .task-input {
     padding: 14px 40px 14px 16px;
     border-radius: 4px 0 0 4px;
     border: 2px solid #000000;
@@ -64,11 +64,11 @@
     color: rgb(250, 230, 174);
   }
   
-  .todo-input::placeholder {
+  .task-input::placeholder {
     color: #fffbfb;
   }
   
-  .todo-button {
+  .task-button {
     padding: 16px;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -83,11 +83,11 @@
     text-transform: capitalize;
   }
   
-  .todo-input.edit {
+  .task-input.edit {
     border: 2px solid #000000;
   }
   
-  .todo-button.edit {
+  .task-button.edit {
     background: linear-gradient(
       90deg,
       rgb(90, 90, 90) 0%,
@@ -97,13 +97,13 @@
     padding: 16px 22px;
   }
   
-  .todo-container {
+  .task-container {
     display: flex;
     flex-direction: row;
     position: relative;
   }
   
-  .todo-row {
+  .task-row {
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
@@ -121,7 +121,7 @@
     width: 90%;
   }
   
-  .todo-row:nth-child(4n + 1) {
+  .task-row:nth-child(4n + 1) {
     color: rgb(204, 250, 0);
     background: linear-gradient(
       90deg,
@@ -130,7 +130,7 @@
     );
   }
   
-  .todo-row:nth-child(4n + 2) {
+  .task-row:nth-child(4n + 2) {
       color: rgb(241, 143, 220);
     background: linear-gradient(
       90deg,
@@ -139,7 +139,7 @@
     );
   }
   
-  .todo-row:nth-child(4n + 3) {
+  .task-row:nth-child(4n + 3) {
     color:silver;
     background: linear-gradient(
       90deg,

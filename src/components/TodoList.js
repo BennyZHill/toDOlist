@@ -1,56 +1,56 @@
 import React, { useState } from 'react';
-import TodoForm from './TodoForm';
-import Todo from './Todo';
+import TaskForm from './TaskForm';
+import Task from './Task';
 
-function TodoList() {
-  const [todos, setTodos] = useState([]);
+function TaskList() {
+  const [tasks, setTasks] = useState([]);
 
-  const addTodo = todo => {
-    if (!todo.text || /^\s*$/.test(todo.text)) {
+  const addTask = task => {
+    if (!task.text || /^\s*$/.test(task.text)) {
       return;
     }
 
-    const newTodos = [todo, ...todos];
+    const newTasks = [task, ...tasks];
 
-    setTodos(newTodos);
+    setTasks(newTasks);
   };
 
-  const updateTodo = (todoId, newValue) => {
+  const updateTask = (todoId, newValue) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
 
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    setTasks(prev => prev.map(item => (item.id === todoId ? newValue : item)));
   };
 
-  const removeTodo = id => {
-    const removedArr = [...todos].filter(todo => todo.id !== id);
+  const removeTask = id => {
+    const removedArr = [...tasks].filter(task => task.id !== id);
 
-    setTodos(removedArr);
+    setTasks(removedArr);
   };
 
-  const completeTodo = id => {
-    let updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
+  const completeTask = id => {
+    let updatedTasks = tasks.map(task => {
+      if (task.id === id) {
+        task.isComplete = !task.isComplete;
       }
-      return todo;
+      return task;
     });
-    setTodos(updatedTodos);
+    setTasks(updatedTasks);
   };
 
   return (
     <>
       <h1>What's the Plan for Today?</h1>
-      <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
+      <TaskForm onSubmit={addTask} />
+      <Task
+        tasks={tasks}
+        completeTask={completeTask}
+        removeTask={removeTask}
+        updateTask={updateTask}
       />
     </>
   );
 }
 
-export default TodoList;
+export default TaskList;

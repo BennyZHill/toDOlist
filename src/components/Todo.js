@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import TodoForm from './TodoForm';
+import TaskForm from './TaskForm';
 import {ImBin} from 'react-icons/im';
 import {GiAtom} from 'react-icons/gi';
 
-const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
+const Task = ({ tasks, completeTask, removeTask, updateTask }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
   });
 
   const submitUpdate = value => {
-    updateTodo(edit.id, value);
+    updateTask(edit.id, value);
     setEdit({
       id: null,
       value: ''
@@ -18,24 +18,24 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   };
 
   if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
+    return <TaskForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return todos.map((todo, index) => (
+  return tasks.map((task, index) => (
     <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+      className={task.isComplete ? 'task-row complete' : 'task-row'}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
+      <div key={task.id} onClick={() => completeTask(task.id)}>
+        {task.text}
       </div>
       <div className='icons'>
         <ImBin
-          onClick={() => removeTodo(todo.id)}
+          onClick={() => removeTask(task.id)}
           className='delete-icon'
         />
         <GiAtom
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
+          onClick={() => setEdit({ id: task.id, value: task.text })}
           className='edit-icon'
         />
       </div>
@@ -43,4 +43,4 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   ));
 };
 
-export default Todo;
+export default Task;
