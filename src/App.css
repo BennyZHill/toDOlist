@@ -20,7 +20,7 @@
   .task-app {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     width: 600px;
     min-height: 500px;
     background: #ffffff1f;
@@ -61,7 +61,7 @@
     outline: none;
     width: 320px;
     background: transparent;
-    color: rgb(250, 230, 174);
+    color: rgb(255, 255, 255);
   }
   
   .task-input::placeholder {
