@@ -61,7 +61,7 @@
     outline: none;
     width: 320px;
     background: transparent;
-    color: rgb(255, 255, 255);
+    color: rgb(250, 230, 174);
   }
   
   .todo-input::placeholder {
